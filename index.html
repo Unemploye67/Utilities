@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilities - Free Fast Online Tools & Productivity Suite</title>
+  <meta name="description" content="100% free online browser tools: document converter, YouTube thumbnail downloader, image compressor, QR code generator, word counter, password generator, and more.">
+  <meta name="keywords" content="online tools, free utilities, document converter, pdf converter, youtube thumbnail downloader, image compressor, qr code generator, word counter, password generator">
+  
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Utilities - Free Online Productivity & Media Tools">
+  <meta property="og:description" content="Lightning-fast, browser-based utilities with zero installations and complete privacy.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Document Conversion Engines (Excel, PDF, Word) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+
+  <!-- Google AdSense Script Placeholder (Uncomment and replace with your Publisher ID when approved) -->
+  <!-- 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  -->
+
+  <style>
+    /* Custom scrollbars & smooth transitions */
+    html { scroll-behavior: smooth; }
+    .ad-slot {
+      background: repeating-linear-gradient(45deg, #f3f4f6, #f3f4f6 10px, #e5e7eb 10px, #e5e7eb 20px);
+      border: 1px dashed #9ca3af;
+    }
+    .dark .ad-slot {
+      background: repeating-linear-gradient(45deg, #1f2937, #1f2937 10px, #111827 10px, #111827 20px);
+      border: 1px dashed #4b5563;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="zap" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-indigo-600 dark:from-brand-400 dark:to-indigo-300">Utilities</span>
+          <span class="text-xs px-2 py-0.5 ml-1 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full font-medium">Free</span>
+        </div>
+      </a>
+
+      <!-- Search & Nav Links -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#home" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-400 transition">All Tools</a>
+        <a href="#about" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-400 transition">About</a>
+        <a href="#privacy" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-400 transition">Privacy</a>
+        <a href="#contact" class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-400 transition">Contact</a>
+      </div>
+
+      <!-- Theme Toggle & CTA -->
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Toggle Theme">
+          <i data-lucide="moon" id="themeIcon" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Top Ad Banner (Google AdSense 728x90 Container) -->
+  <div class="max-w-4xl mx-auto px-4 mt-4 w-full">
+    <div class="ad-slot rounded-xl p-4 text-center text-xs text-slate-400 flex flex-col items-center justify-center min-h-[90px]">
+      <span class="font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Advertisement Space</span>
+      <span>(Google AdSense Banner Placeholder - 728x90)</span>
+      <!-- Paste your <ins class="adsbygoogle"> code here when approved -->
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    
+    <!-- VIEW 1: HOME CATALOG VIEW -->
+    <section id="catalogView" class="space-y-8">
+      
+      <!-- Hero Section -->
+      <div class="text-center max-w-3xl mx-auto space-y-4 pt-4 pb-6">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Fast, Free & <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-indigo-500">Private</span> Online Tools
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-300">
+          No signups, no watermarks, no server tracking. Everything processes directly in your browser.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="relative max-w-xl mx-auto mt-6">
+          <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+          <input 
+            type="text" 
+            id="toolSearch" 
+            placeholder="Search tool (e.g. YouTube, image compressor, password, QR)..." 
+            class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"
+          >
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-2" id="categoryFilters">
+          <button data-cat="all" class="cat-btn active px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white shadow-sm transition">All Tools</button>
+          <button data-cat="media" class="cat-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Media & Images</button>
+          <button data-cat="text" class="cat-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Text & Writing</button>
+          <button data-cat="utility" class="cat-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Utilities & Dev</button>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Dynamically rendered or static cards -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: ACTIVE TOOL VIEW -->
+    <section id="toolWorkspaceView" class="hidden space-y-6">
+      <!-- Back Button & Breadcrumbs -->
+      <div class="flex items-center justify-between">
+        <a href="#home" class="inline-flex items-center gap-2 text-sm font-medium text-brand-600 dark:text-brand-400 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to all tools
+        </a>
+        <span id="activeToolBadge" class="text-xs px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">Tool</span>
+      </div>
+
+      <!-- Active Tool Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Main Tool Card (2 cols) -->
+        <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm" id="toolContainer">
+          <!-- Active tool interactive UI injected here -->
+        </div>
+
+        <!-- Sidebar (AdSense + Instructions & Related tools) (1 col) -->
+        <aside class="space-y-6">
+          
+          <!-- Mid Ad Slot (300x250 Medium Rectangle) -->
+          <div class="ad-slot rounded-2xl p-4 text-center text-xs text-slate-400 flex flex-col items-center justify-center min-h-[250px]">
+            <span class="font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Advertisement</span>
+            <span>(Google AdSense 300x250)</span>
+          </div>
+
+          <!-- How to use box -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 space-y-3">
+            <h3 class="font-bold text-sm flex items-center gap-2 text-slate-900 dark:text-white">
+              <i data-lucide="info" class="w-4 h-4 text-brand-500"></i> How It Works
+            </h3>
+            <p id="toolInstructions" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed"></p>
+          </div>
+
+          <!-- Privacy guarantee badge -->
+          <div class="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/40 rounded-2xl p-4 flex items-start gap-3">
+            <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"></i>
+            <div>
+              <h4 class="text-xs font-bold text-emerald-900 dark:text-emerald-300">100% Client-Side Privacy</h4>
+              <p class="text-xs text-emerald-700 dark:text-emerald-400 mt-0.5">Files and inputs never leave your device or touch our servers.</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- VIEW 3: STATIC LEGAL & INFO PAGES (AdSense Approval Requirement!) -->
+    <section id="staticPageView" class="hidden max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-12 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
+      <div id="staticPageContent"></div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Ad Banner (Leaderboard 728x90) -->
+  <div class="max-w-4xl mx-auto px-4 mb-6 w-full">
+    <div class="ad-slot rounded-xl p-4 text-center text-xs text-slate-400 flex flex-col items-center justify-center min-h-[90px]">
+      <span class="font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Advertisement Space</span>
+      <span>(Google AdSense Banner Placeholder - 728x90)</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+        </div>
+        <span class="font-bold text-slate-900 dark:text-white">Utilities</span>
+        <span class="text-xs text-slate-500 ml-2">© 2026. Free for everyone.</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 dark:text-slate-400">
+        <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition">About Us</a>
+        <a href="#privacy" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Privacy Policy</a>
+        <a href="#terms" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Terms of Service</a>
+        <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
